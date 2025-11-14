@@ -1,1 +1,51 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: 'Rubik-bubbles';
+    src: url(./assets/fonts/RubikBubbles-Regular.ttf) ;
+}
+
+@font-face {
+    font-family: 'Raleway-black';
+    src: url(./assets/fonts/Raleway-Black.ttf) ;
+}
+
+@font-face {
+    font-family: 'Raleway-regular';
+    src: url(./assets/fonts/Raleway-Regular.ttf) ;
+}
+
+:root{
+    --hero-font: 'Rubik-bubbles', cursive;
+    --body-font: 'Raleway-regular', sans-serif;
+    --hero-card-font: 'Raleway-black', sans-serif;
+    --navbar-radius: 40px;
+    --navbar-background: #322021;
+    --footer-background: #322021;
+    --text-navbar: #EFE8E5;
+    --login-button: #654142;
+    --card-dark: #A2696A;
+    --card-light: #BF9A9B;
+    /* for get started button */
+    --button-stroke-color: #A2696A;
+    --button-stroke-weight: 3px;
+    --mug-opacity:0.1;
+
+}
+
+body{
+    font-size: var(--body-font);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: cornsilk;
+}
+
+@layer components{
+    .card{
+        @apply  rounded-md text-white
+    }
+    .card h1{
+        @apply font-bold 
+    }
+}
