@@ -23,6 +23,7 @@
     --navbar-background: #322021;
     --footer-background: #322021;
     --text-navbar: #EFE8E5;
+    --text-footer: #EFE8E5;
     --login-button: #654142;
     --card-dark: #A2696A;
     --card-light: #BF9A9B;
@@ -35,15 +36,12 @@
 
 body{
     font-size: var(--body-font);
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
     background-color: cornsilk;
 }
 
 @layer components{
     .card{
-        @apply  rounded-md text-white
+        @apply  rounded-md text-center text-white px-4 py-9
     }
     .card h1{
         @apply font-bold 
