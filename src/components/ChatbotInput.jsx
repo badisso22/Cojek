@@ -1,18 +1,27 @@
 import { useState } from "react";
+import OpenAI from "openai"
 
 export function ChatbotInput({messages, setMessages}){
 
     const [inputText, setInputText] = useState("")
 
+    const client = new OpenAI({
+        apiKey: "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",
+        dangerouslyAllowBrowser:true,
+    })
+
     function saveInputText(event){
         setInputText(event.target.value);
     }
 
-    function sendMessage(){
+    async function sendMessage(){
+        const userMessage = inputText.trim();
+        if (!userMessage) return
+
         const existingMessages = [
             ...messages,
             {
-                message:  inputText,
+                message:  userMessage,
                 sender: "user",
                 id: crypto.randomUUID(),
             }
@@ -22,10 +31,23 @@ export function ChatbotInput({messages, setMessages}){
 
         setInputText("")
 
+        //calling llm api
+        const response = await client.chat.completions.create({
+            model: "gpt-4o-mini",
+            messages: [
+                {
+                    role: "user",
+                    content: `Suggest project ideas for computer science students in: ${userMessage}`
+                },
+            ],
+        })
+
+        const chatbotResponse = response.choices[0].message.content
+
         setMessages([
               ...existingMessages,
             {
-                message:  inputText,
+                message:  chatbotResponse,
                 sender: "chatbot",
                 id: crypto.randomUUID(),
             }
