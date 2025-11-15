@@ -106,7 +106,7 @@ Structured data model for users, teams, messages, and projects. APIs are documen
 
 ## Credits / Attribution
 
-This project uses the **React + Vite** starter template from [vitejs/vite](https://github.com/vitejs/vite) (see [original repo](https://github.com/vitejs/vite/tree/main/packages/create-react-app)).
+This project uses the **React + Vite** starter template from [vitejs/vite](https://github.com/vitejs/vite).
 
 Certain ESLint, Babel, and SWC plugin configurations are directly sourced from Vite's official setup.
 
