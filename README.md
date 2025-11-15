@@ -79,7 +79,7 @@ Structured data model for users, teams, messages, and projects. APIs are documen
 ---
 
 ## Entity/Association Diagram
-![Entity Diagram](Cojek-diagram.pdf)
+![Entity Diagram](diagram.png)
 
 ---
 
