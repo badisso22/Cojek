@@ -1,4 +1,5 @@
 import {Navbar} from '../components/Navbar'
+import {GeneratorChatbot} from '../components/GeneratorChatbot'
 import './ProjectGenPage.css'
 
 export function ProjectGenPage() {
@@ -16,13 +17,12 @@ export function ProjectGenPage() {
         </div>
 
         {/* chat bot component */}
-        <div className="h-[300px] border-2 mx-15 mb-4">
-
-        </div>
+        <GeneratorChatbot/>
 
         {/* cards */}
-        <div className="cards grid grid-cols-4 gap-4 px-15 pb-5">
-           <div className='card relative'>
+        <div className="cards  px-15 pb-2 grid items-center ">
+        <div className=' grid grid-cols-4 gap-4 '>
+               <div className='card relative'>
                      <img className='size-15 absolute left-1/2 -translate-x-1/2 bottom-2/5 -translate-y-1/2 transform' src="/images/beans.png" alt="coffee-bean-png" />
                     <p>Pick a topic</p>
                 </div>
@@ -38,6 +38,7 @@ export function ProjectGenPage() {
                      <img className='size-15 absolute left-1/2 -translate-x-1/2 bottom-2/5 -translate-y-1/2 transform' src="/images/beans.png" alt="coffee-bean-png" />
                     <p>Track your streak</p>
                 </div>
+        </div>
         </div>
 
         </div>
