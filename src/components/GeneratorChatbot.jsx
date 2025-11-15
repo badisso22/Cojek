@@ -20,8 +20,10 @@ export function GeneratorChatbot() {
     return (
         <div >
          
-            <div className="chatbot-container py-10 px-15 mx-15 mb-20 flex flex-col border">
-               <ChatMessages messages={messages} />
+            <div className="chatbot-container  mx-15 mb-20 flex flex-col border ">
+               <div className="chat-messages-container px-15">
+                <ChatMessages messages={messages} />
+               </div>
               <ChatbotInput messages={messages} setMessages={setMessages}/>
             </div>
         </div>
