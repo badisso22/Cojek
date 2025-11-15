@@ -10,13 +10,17 @@ $endpoint = "https://api-inference.huggingface.co/models/$model";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $input = json_decode(file_get_contents('php://input'), true);
-    $skills = $input['skills'] ?? '';
-    if (!$skills) {
-        echo json_encode(['success' => false, 'error' => 'Skills required']);
+    $messages = $input['messages'] ?? [];
+    if (!is_array($messages) || count($messages) === 0) {
+        echo json_encode(['success' => false, 'error' => 'Message history required']);
         exit;
     }
-
-    $prompt = "Suggest 3 web app project ideas for someone with these skills: $skills. Each idea: title + 1-sentence description.";
+    $prompt = "You are an expert AI project advisor. Answer only based on the latest user's message, but use prior messages for context.\n";
+    foreach ($messages as $msg) {
+        $role = $msg['role'] === 'user' ? 'User' : 'AI';
+        $prompt .= "$role: " . trim($msg['content']) . "\n";
+    }
+    $prompt .= "AI:";
 
     $data = [ "inputs" => $prompt ];
 
@@ -31,12 +35,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $response = curl_exec($ch);
     curl_close($ch);
-
     $respObj = json_decode($response, true);
+    $reply = isset($respObj[0]['generated_text']) ? $respObj[0]['generated_text'] : $response;
+    $parts = explode("AI:", $reply);
+    $answer = trim(end($parts));
 
-    $ideas = isset($respObj[0]['generated_text']) ? $respObj[0]['generated_text'] : $response;
-
-    echo json_encode(['success' => true, 'ideas' => $ideas]);
+    echo json_encode(['success' => true, 'reply' => $answer]);
     exit;
 } else {
     echo json_encode(['success' => false, 'error' => 'POST method only']);
