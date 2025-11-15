@@ -2,26 +2,28 @@
 
 @font-face {
     font-family: 'Rubik-bubbles';
-    src: url(./assets/fonts/RubikBubbles-Regular.ttf) ;
+    src: url(./assets/fonts/RubikBubbles-Regular.ttf) format('truetype');
 }
 
 @font-face {
     font-family: 'Raleway-black';
-    src: url(./assets/fonts/Raleway-Black.ttf) ;
+    src: url(./assets/fonts/Raleway-Black.ttf) format('truetype');
 }
 
 @font-face {
     font-family: 'Raleway-regular';
-    src: url(./assets/fonts/Raleway-Regular.ttf) ;
+    src: url(./assets/fonts/Raleway-Regular.ttf) format('truetype');
 }
 
 :root{
-    --hero-font: 'Rubik-bubbles', cursive;
-    --body-font: 'Raleway-regular', sans-serif;
-    --hero-card-font: 'Raleway-black', sans-serif;
+    --font-rubik-bubbles: 'Rubik-bubbles', cursive;
+    --font-raleway-regular: 'Raleway-regular', sans-serif;
+    --font-raleway-black: 'Raleway-black', sans-serif;
     --navbar-radius: 40px;
+    --landing-page-background: #f0e7e6;
     --navbar-background: #322021;
     --footer-background: #322021;
+    --footer-input: #322021;
     --text-navbar: #EFE8E5;
     --text-footer: #EFE8E5;
     --login-button: #654142;
@@ -35,15 +37,24 @@
 }
 
 body{
-    font-size: var(--body-font);
-    background-color: cornsilk;
+    font-family: var( --font-raleway-regular);
+    background-color: var(--landing-page-background);
 }
 
 @layer components{
     .card{
         @apply  rounded-md text-center text-white px-4 py-9
     }
-    .card h1{
+    .card h3{
         @apply font-bold 
     }
+
+}
+
+@layer utilities{
+    .stroke-text{
+        -webkit-text-stroke-width: var(--button-stroke-weight);
+        -webkit-text-stroke-color: var(--button-stroke-color);
+    }
+    
 }
