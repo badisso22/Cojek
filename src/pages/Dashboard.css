@@ -1,0 +1,27 @@
+.dashboard{
+    border-radius: 16px;
+}
+
+.menu{
+    border-top-left-radius: 16px;
+     border-bottom-left-radius: 16px;
+     padding-bottom: 2rem;
+    
+}
+
+.dashboard-area{
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+     padding-top:2rem;
+}
+
+.hero-heading{
+    font-weight: bold;
+    font-size: 3em;
+}
+
+.buttons button{
+    background-color: brown;
+    padding: .3rem 1rem ;
+    border-radius: 16px;
+}

@@ -17,7 +17,7 @@ export function Navbar() {
             Quiz
           </Link>
 
-          <Link className="bg-(--login-button) rounded-[25px] px-4 py-1" to="/login">
+          <Link className="bg-(--login-button) rounded-[25px] px-4 py-1" to="/dashboard">
             Login
           </Link>
         </ul>
