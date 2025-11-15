@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom'
+import {Link} from "react-router-dom";
 
 export function Navbar() {
     return(
@@ -18,7 +18,7 @@ export function Navbar() {
           </Link>
 
           <Link className="bg-(--login-button) rounded-[25px] px-4 py-1" to="/login">
-            Login
+          Login
           </Link>
         </ul>
 
