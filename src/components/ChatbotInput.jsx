@@ -6,7 +6,7 @@ export function ChatbotInput({messages, setMessages}){
     const [inputText, setInputText] = useState("")
 
     const client = new OpenAI({
-        apiKey: "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",
+        apiKey: import.meta.env.MY_API_KEY,
         dangerouslyAllowBrowser:true,
     })
 
