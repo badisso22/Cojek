@@ -17,8 +17,14 @@ export function Navbar() {
             Quiz
           </Link>
 
+<<<<<<< HEAD
           <Link className="bg-(--login-button) rounded-[25px] px-4 py-1" to="/login">
           Login
+          </Link>
+=======
+          <Link className="bg-(--login-button) rounded-[25px] px-4 py-1" to="/dashboard">
+            Login
+>>>>>>> frontend-setup
           </Link>
         </ul>
 
